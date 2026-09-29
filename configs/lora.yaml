@@ -1,0 +1,37 @@
+# LoRA supervised fine-tuning of Qwen2.5-1.5B-Instruct on ABCD next-action prediction.
+#
+#   mlx_lm.lora --config configs/lora.yaml
+#
+# One pass over 8,000 of ABCD's 29,190 training examples. The loss is computed on the
+# JSON answer only (mask_prompt), not on the system prompt or the conversation, so the
+# model is trained to decide, not to reproduce transcripts.
+
+model: Qwen/Qwen2.5-1.5B-Instruct
+data: data/sft
+train: true
+fine_tune_type: lora
+seed: 0
+
+# One epoch: 8000 examples / batch 2 = 4000 iterations. Gradients accumulate over 4
+# batches, so the effective batch is 8 and there are 1000 weight updates. On the 24 GB M4,
+# batch 8 ran out of GPU memory immediately and batch 4 ran out at step ~350, once the
+# longer conversations came through (peak memory climbed 15.7 -> 19.5 GB).
+batch_size: 2
+grad_accumulation_steps: 4
+iters: 4000
+learning_rate: 1.0e-4
+optimizer: adamw
+mask_prompt: true
+max_seq_length: 1024
+
+num_layers: 16
+lora_parameters:
+  rank: 16
+  dropout: 0.05
+  scale: 20.0
+
+steps_per_report: 50
+steps_per_eval: 500
+val_batches: 10
+save_every: 250
+adapter_path: adapters/lora
