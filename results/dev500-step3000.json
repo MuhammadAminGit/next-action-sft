@@ -1,0 +1,40 @@
+{
+  "name": "step3000",
+  "split": "dev500",
+  "model": "Qwen/Qwen2.5-1.5B-Instruct",
+  "adapter": "adapters/step3000",
+  "shots": 0,
+  "prompt": "compact",
+  "seconds": 207.3,
+  "mean_prompt_tokens": 317.148,
+  "joint": {
+    "mean": 0.668,
+    "ci95": [
+      0.6259842519685039,
+      0.7091633466135459
+    ]
+  },
+  "action": {
+    "mean": 0.796,
+    "ci95": [
+      0.7612244897959184,
+      0.8309572301425662
+    ]
+  },
+  "values": {
+    "mean": 0.726,
+    "ci95": [
+      0.688715953307393,
+      0.7641129032258065
+    ]
+  },
+  "valid": {
+    "mean": 1.0,
+    "ci95": [
+      1.0,
+      1.0
+    ]
+  },
+  "n_examples": 500,
+  "n_conversations": 400
+}

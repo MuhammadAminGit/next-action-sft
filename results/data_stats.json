@@ -1,0 +1,21 @@
+{
+  "conversations": {
+    "train": 8034,
+    "dev": 1004,
+    "test": 1004
+  },
+  "examples": {
+    "train": 29190,
+    "dev": 3684,
+    "test": 3608
+  },
+  "sft_train_used": 8000,
+  "majority_action": "pull-up-account",
+  "majority_action_rate_test": 0.19650776053215077,
+  "transcript_ceiling_test": 0.8453436807095344,
+  "label_noise_train": {
+    "notify-team": 0.09911894273127753,
+    "shipping-status": 0.06568364611260054,
+    "membership": 0.01296456352636128
+  }
+}

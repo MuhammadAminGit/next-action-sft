@@ -1,0 +1,40 @@
+{
+  "name": "step1000",
+  "split": "dev500",
+  "model": "Qwen/Qwen2.5-1.5B-Instruct",
+  "adapter": "adapters/step1000",
+  "shots": 0,
+  "prompt": "compact",
+  "seconds": 205.7,
+  "mean_prompt_tokens": 317.148,
+  "joint": {
+    "mean": 0.626,
+    "ci95": [
+      0.582995951417004,
+      0.6693069306930693
+    ]
+  },
+  "action": {
+    "mean": 0.774,
+    "ci95": [
+      0.7359223300970874,
+      0.8131212723658051
+    ]
+  },
+  "values": {
+    "mean": 0.692,
+    "ci95": [
+      0.6527777777777778,
+      0.7330754352030948
+    ]
+  },
+  "valid": {
+    "mean": 1.0,
+    "ci95": [
+      1.0,
+      1.0
+    ]
+  },
+  "n_examples": 500,
+  "n_conversations": 400
+}

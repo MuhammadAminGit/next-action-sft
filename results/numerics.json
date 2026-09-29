@@ -1,0 +1,45 @@
+{
+  "examples": 200,
+  "identical_outputs": 180,
+  "reference": {
+    "joint": 0.11,
+    "action": 0.195,
+    "values": 0.28,
+    "valid": 0.75
+  },
+  "fast": {
+    "joint": 0.12,
+    "action": 0.205,
+    "values": 0.295,
+    "valid": 0.775
+  },
+  "paired": {
+    "joint": {
+      "metric": "joint",
+      "diff": 0.01,
+      "ci95": [
+        0.0,
+        0.02512562814070352
+      ],
+      "excludes_zero": false
+    },
+    "action": {
+      "metric": "action",
+      "diff": 0.01,
+      "ci95": [
+        -0.00980392156862745,
+        0.030303030303030304
+      ],
+      "excludes_zero": false
+    },
+    "values": {
+      "metric": "values",
+      "diff": 0.015,
+      "ci95": [
+        0.0,
+        0.034653465346534656
+      ],
+      "excludes_zero": false
+    }
+  }
+}
